@@ -30,7 +30,7 @@ function Feed({ user, profileInfo, allFeedPosts }) {
 
   function handleFetchImagePublicUrl(getData) {
     const { data } = supabaseClient.storage
-      .from("job-board-public")
+      .from("job-board")
       .getPublicUrl(getData.path);
 
     console.log(data);
@@ -44,7 +44,7 @@ function Feed({ user, profileInfo, allFeedPosts }) {
 
   async function handleUploadImageToSupabase() {
     const { data, error } = await supabaseClient.storage
-      .from("job-board-public")
+      .from("job-board")
       .upload(`/public/${imageData?.name}`, imageData, {
         cacheControl: "3600",
         upsert: false,
