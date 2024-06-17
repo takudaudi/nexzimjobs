@@ -21,8 +21,7 @@ function PostNewJob({ profileInfo, user, jobList }) {
 
   function handlePostNewBtnValid() {
     return Object.keys(jobFormData).every(
-      (control) =>
-        typeof jobFormData[control] === 'string' && jobFormData[control].trim() !== ""
+      (control) => jobFormData[control].trim() !== ""
     );
   }
 
